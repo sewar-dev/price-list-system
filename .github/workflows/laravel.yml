@@ -52,5 +52,5 @@ jobs:
     - name: Run Migrations
       run: php artisan migrate --force
 
-    - name: Run Pest Tests
-      run: ./vendor/bin/pest
+    - name: Run Tests
+      run: php artisan test
