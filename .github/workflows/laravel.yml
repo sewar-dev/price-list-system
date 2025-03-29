@@ -53,7 +53,7 @@ jobs:
       run: php artisan migrate --force
 
     - name: Run Seeder
-      run: php artisan db::seed
+      run: php artisan db:seed
 
     - name: Run Tests
       run: php artisan test
