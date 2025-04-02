@@ -1,11 +1,9 @@
-# Price List System API
+# Price List System - Laravel
 
-[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.1-8892BF.svg)](https://php.net/)
-[![Laravel Version](https://img.shields.io/badge/Laravel-10.x-FF2D20.svg)](https://laravel.com)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PHP Version](https://img.shields.io/badge/PHP-8.1.10%2B-brightgreen)](https://php.net/)
+[![Laravel Version](https://img.shields.io/badge/Laravel-10.3.3-brightgreen)](https://laravel.com)
 
-
-This project implements a Price List System API using Laravel, allowing products to have different prices based on country, currency, and time periods.
+A dynamic pricing system for e-commerce platforms that supports country-specific pricing, currency conversion, and time-based promotions.
 
 ## Features
 
@@ -57,7 +55,18 @@ This project implements a Price List System API using Laravel, allowing products
     ```bash
     php artisan key:generate
     ```
+5.  **Configure database**
 
+    ```bash
+        Edit .env file:
+        env 
+            DB_CONNECTION=mysql
+            DB_HOST=127.0.0.1
+            DB_PORT=3306
+            DB_DATABASE=your_db_name
+            DB_USERNAME=your_db_user
+            DB_PASSWORD=your_db_password
+    ```
 5.  **Run database migrations:**
 
     ```bash
