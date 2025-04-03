@@ -60,8 +60,8 @@ A sophisticated pricing engine for e-commerce platforms supporting multi-dimensi
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/sewar-dev/dynamic-pricing-system.git
-cd dynamic-pricing-system
+git clone https://github.com/sewar-dev/price-list-system.git
+cd price-list-system
 ```
 
 ### 2. Configure Environment
