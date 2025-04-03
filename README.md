@@ -1,8 +1,3 @@
-I'll provide the complete README content in a copy-friendly format. Simply select and copy the text below:
-
----
-
-```markdown
 # Dynamic Pricing System - Laravel
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-blue)](https://php.net/)
