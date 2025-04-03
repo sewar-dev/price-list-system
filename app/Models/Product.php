@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    
+
     protected $casts = [
         'base_price' => 'decimal:2',
         'applicable_price' => 'decimal:2',
@@ -18,9 +18,9 @@ class Product extends Model
 
     public function scopeWithBestPrice($query, array $params)
     {
-        return $query->with(['bestPrice' => function($q) use ($params) {
-            $q->forCountry($params['country_code'])
-              ->forCurrency($params['currency_code'])
+        return $query->with(['priceLists' => function($q) use ($params) {
+            $q->country($params['country_code'])
+              ->currency($params['currency_code'])
               ->activeAt($params['date'])
               ->orderByPriority();
         }]);

@@ -13,14 +13,14 @@ class  ProductRepository extends Repository
         return new  Product();
     }
 
-    public function getProductsWithPrices(array $params): LengthAwarePaginator
+    public function getProductsWithPrices(array $params)
     {
         $cacheKey = $this->generateCacheKey($params);
 
         return Cache::remember($cacheKey, 3600, function () use ($params) {
             return $this->getModel()->query()
                 ->withBestPrice($params)
-                ->paginate();
+                ->get();
         });
     }
 

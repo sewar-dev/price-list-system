@@ -19,6 +19,11 @@ class PriceList extends Model
     ];
 
 
+    public static function for(Product $product)
+    {
+        return static::query()->where('product_id', $product->id);
+    }
+
     public function product()
     {
         return $this->belongsTo(Product::class);
@@ -65,8 +70,7 @@ class PriceList extends Model
         });
     }
 
-
-    public function scopeOrderByPriority(Builder $query, ?string $order)
+    public function scopeOrderByPriority(Builder $query, ?string $order = null)
     {
         $query->orderBy('priority',  $order === 'lowest-to-highest' ? 'asc' : 'desc');
     }

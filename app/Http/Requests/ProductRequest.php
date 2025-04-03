@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Validation\Rule;
+use Illuminate\Contracts\Validation\Validator;
 
 class ProductRequest extends FormRequest
 {
@@ -60,13 +62,21 @@ class ProductRequest extends FormRequest
         ];
     }
 
-    public function getData():array
+    public function getData(): array
     {
         return [
             'country_code'   => $this->input('country_code') ?? '',
-            'currency_code'  => $this->input('currency_code')?? '',
-            'date'           => $this->input('date')?? '',
+            'currency_code'  => $this->input('currency_code') ?? '',
+            'date'           => $this->input('date') ?? '',
             'order'          => $this->input('order') ?? ''
         ];
+    }
+
+
+    protected function failedValidation(Validator $validator): void
+    {
+        throw new HttpResponseException(
+            sendResponse(false,$validator->errors()->first(), null, 422)
+        );
     }
 }
