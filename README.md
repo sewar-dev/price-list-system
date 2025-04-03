@@ -244,4 +244,3 @@ MIT License - See [LICENSE](LICENSE) for full text.
 - [ ] Historical price tracking
 - [ ] Multi-currency conversion layer
 - [ ] Price rule versioning
-- [ ] Admin dashboard
